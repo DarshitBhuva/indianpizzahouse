@@ -1,0 +1,244 @@
+body
+{
+    font-family: 'Baloo 2', cursive;
+    margin: 0;
+    padding: 0px;
+}
+/* Navigation page css start */
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: black;
+    opacity: 0.6;
+    /* border-radius: 20px; */
+}
+
+#myLinks{
+    display: flex;
+}
+
+/* #myLinks form
+{
+    height: 40px;
+    width: 300px;
+    margin: auto;
+    margin-left: 300px;
+    float: left;
+}
+#myLinks input[type="text"]
+{
+    height: 40px;
+    width: 200px;
+} */
+.navbar a{
+    padding: 12px 12px;
+    margin: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+.navbar a:hover{
+    background-color: #ddd;
+    color: black;
+}
+.navbar a.icon{
+    display: none;
+}
+
+
+@media (min-width:250px) and (max-width:540px)
+{
+    .navbar a.icon {
+        background-color: black;
+        color: white;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    #myLinks{ 
+        display: none;
+    }
+    .navbar{
+        display: block;
+    }
+    .navbar a{
+        margin: 5px;
+    }
+}
+/* Nevigation page css end */
+
+.heading h1{
+    text-align: center;
+    color: white;
+    /* font-size: 3vw; */
+    font-family: 'Prompt', sans-serif;
+    text-decoration: none;
+    margin-top: -25px;
+    width: 0ch;
+    overflow: hidden;
+    animation: heading 6s 2 steps(15) forwards;
+    border-right: 3px solid white;
+    white-space: nowrap;
+}
+
+@keyframes heading
+{
+   0%{
+       width: 0ch;
+   }
+   100%{
+       width: 15ch;
+   }
+}
+.heading h2{
+    text-align: center;
+    color: white;
+    /* font-size: 3vw; */
+    font-family: 'Prompt', sans-serif;
+    text-decoration: none;
+}
+.heading{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(102, 102, 153);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.image img{
+    height: 150px;
+    width: 150px;
+    margin: 7px;
+    border-radius: 12px;
+}
+
+.container
+{
+    background-color: rgb(37, 35, 35);
+    border-radius: 14px;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container h1{
+    text-align: center;
+    color: white;
+}
+.card img
+{
+    height: 40vh;
+    width: 20vw;
+
+}
+.card
+{
+    /* border: 2px solid black; */
+    border-radius: 12px;
+    width: 31%;
+    text-align: center;
+    background-color: rgb(255, 31, 31);
+    margin: 15px;
+}
+
+.card a[name="button"]
+{
+    text-decoration: none;
+    /* border: 2px solid black; */
+    background-color: rgb(160, 252, 255);
+    
+}
+.center
+{
+    
+    text-align: center;
+}
+footer{
+    background-color: black;
+    color: white;
+    padding: 9px 20px;
+    margin-top: 10px;
+}
+@media (min-width: 280px) and (max-width: 530px)
+{
+    /* .container
+    {
+        border: 2px solid red;
+    } */
+    .card
+    {
+        height: 50%;
+        width: 95%;
+    }
+
+    .card img
+    {
+        height: 150px;
+        width: 150px;
+    }
+    .heading
+    {
+        text-align: center;
+    }
+    .heading img
+    {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media (min-width: 540px) and (max-width:770px)
+{
+    .card
+    {
+        height: 90%;
+        width: 40%;
+    }
+
+    .card img
+    {
+        height: 150px;
+        width: 150px;
+    }
+    .heading
+    {
+        text-align: center;
+    }
+    .heading img
+    {
+        height: 240px;
+        width: 240px;
+    }
+}
+@media (min-width: 780px) and (max-width:1024px)
+{
+    .card
+    {
+        height: 90%;
+        width: 30%;
+    }
+
+    .card img
+    {
+        height: 200px;
+        width: 200px;
+    }
+    .heading
+    {
+        text-align: center;
+    }
+    .heading img
+    {
+        height: 200px;
+        width: 200px;
+    }
+}
