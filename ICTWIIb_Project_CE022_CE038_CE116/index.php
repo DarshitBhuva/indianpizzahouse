@@ -173,7 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="text" name="name" class="input" value= "<?php echo $name;?>" placeholder="Enter Your Name"><br>
           
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
-            <input type="email" name="email" class="input" value= "<?php echo $email; ?>" placeholder="Enter Your Emali"><br>
+            <input type="email" name="email" class="input" style="margin-left: -5px;" value= "<?php echo $email; ?>" placeholder="Enter Your Emali"><br>
             
             <i class="fa fa-lock" aria-hidden="true"></i>
             <input type="password" name="password" class="input" value= "<?php echo $password; ?>" placeholder="Create a Password"><br>
