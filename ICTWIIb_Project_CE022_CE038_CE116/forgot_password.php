@@ -5,32 +5,54 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     require_once "config.php";
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['conf_password'];
-
-    if ($password == $confirm_password) {
-        if ($_POST['captcha'] == $_POST['rand_captcha']) {
-            $sql = "select * from user_data where name = '$username' AND email='$email'";
-            $result = mysqli_query($conn, $sql);
-            $num = mysqli_num_rows($result);
-            if ($num == 1) {
-                $hash = password_hash($password, PASSWORD_DEFAULT);
-                $sql = "update user_data SET password = '$hash' where name = '$username' AND email='$email'";
-                $result = mysqli_query($conn, $sql);
-
-                if ($result) {
-                    echo "<script>alert('Your Password Successfully Reset..')</script>";
-                    echo "<script>window.location = 'my_account.php'</script>";
+    $password = "";
+    $input_password = trim($_POST['password']);
+    $confirm_password = trim($_POST['conf_password']);
+    
+       $uppercase = preg_match("/[A-Z]+/",$input_password);
+        $lowercase = preg_match("/[a-z]+/",$input_password);
+        $digit = preg_match("/[0-8]+/",$input_password);
+        $specialchar = preg_match("/[~!@#$%^&*]+/",$input_password);
+        if(empty($input_password))
+        {
+            $error = "Please enter a password";
+        }
+        if(!($uppercase && $lowercase && $digit && $specialchar && strlen($input_password)>=6 && strlen($input_password)<=11))
+        {
+            $error="<br><b>your password must contain at least one uppercase letter, at least one lowercase, at least one digit,at least one special character and range must be 6 to 11</b>";
+        }
+        else
+        {
+             $password = $input_password;
+             if ($password == $confirm_password) {
+                if ($_POST['captcha'] == $_POST['rand_captcha']) {
+                    $sql = "SELECT * FROM user_data WHERE name = '$username' AND email='$email'";
+                    $result = mysqli_query($conn, $sql);
+                    if($result)
+                    {
+                        $num = mysqli_num_rows($result);
+                        if ($num == 1) {
+                            $hash = password_hash($password, PASSWORD_DEFAULT);
+                            $sql1 = "UPDATE user_data SET password = '$hash' WHERE name = '$username' AND email='$email'";
+                            $result1 = mysqli_query($conn, $sql1);
+        
+                            if ($result1) {
+                                echo "<script>alert('Your Password Successfully Reset..')</script>";
+                                echo "<script>window.location = 'my_account.php'</script>";
+                            }
+                        }else {
+                            $error = "Error!! No Data Found for Password Update.";
+                        }
+                    } 
+                } else {
+                    $error = "Error!! Please Enter a Valid Captcha";
                 }
             } else {
-                $error = "Error!! No Data Found for Password Update.";
+                $error = "Error!! Both Password didn't Match.";
             }
-        } else {
-            $error = "Error!! Please Enter a Valid Captcha";
         }
-    } else {
-        $error = "Error!! Both Password didn't Match.";
-    }
+   
+    
 }
 ?>
 
