@@ -1,0 +1,129 @@
+body{
+    font-family: 'RocknRoll One', sans-serif;
+    padding: 0px;
+    margin: 0p
+}
+
+.containers{
+    
+
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    width: 100vw;
+    /* background-color: rgb(255, 30, 30); */
+}
+.containers img
+{
+    height: 15rem;
+    width: 15rem;
+    padding-top: 12px;
+}
+
+.cards
+{
+    /* width: 30vw; */
+    /* height: 70vh;  */
+    background-color: rgb(243, 156, 170);
+    /* border: 2px solid purple; */
+    margin: 10px;
+   text-align: center;
+   border-radius: 14px;
+}
+
+.cards b{
+    color: rgb(252, 235, 0);
+    font-size: 20px;
+}
+.cards a[name='button']
+{
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 7px 10px;
+    width: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    transition-property: all;
+    transition-duration: 2s;
+    margin-bottom: 20px;
+}
+.cards a[name='cart']
+{
+    text-decoration: none;
+    width: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
+.cards a[name='button']:hover
+{
+   color: red;
+
+}
+
+.center
+{
+    text-align: center;
+}
+footer{
+    background-color: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+ @media (min-width:280px) and (max-width: 530px)
+{
+    .containers{
+
+        grid-template-columns: 1fr;
+    }
+    /* .containers img{
+        height: 200px;
+        width: 200px;
+    }
+    .cards{
+        width: 85%;
+        height: 60vh;
+        background-color: coral;
+    } */
+}
+
+
+@media (min-width: 540px) and (max-width: 770px)
+{
+    .containers{
+
+        /* border: 2px solid blue; */
+       
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* .cards
+    {
+        width: 45vw;
+        height: 55vh;
+    }
+    .containers img{
+        height: 175px;
+        width: 175px;
+    } */
+}
+
+@media (min-width: 770px) and (max-width: 1030px)
+{
+    .containers{
+      
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* .cards
+    {
+        width: 30vw;
+        height: 30vh;
+    }
+    .containers img{
+        height: 175px;
+        width: 175px;
+    } */
+} 

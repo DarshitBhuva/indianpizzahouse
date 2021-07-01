@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+}
+button.btn{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    width: 80px;
+    padding: 7px;
+    border-radius: 8px;
+    border-style: none;
+    
+}
+
+.container
+{
+    text-align: center;
+}

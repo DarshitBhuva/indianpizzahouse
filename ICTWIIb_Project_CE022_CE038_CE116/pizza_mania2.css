@@ -1,0 +1,105 @@
+body{
+    font-family: 'RocknRoll One', sans-serif;
+    padding: 0px;
+    margin: 0p
+}
+
+.containers{
+    
+
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    width: 100vw;
+    /* background-color: rgb(255, 30, 30); */
+}
+.containers img
+{
+    height: 15rem;
+    width: 15rem;
+    padding-top: 12px;
+}
+
+.cards
+{
+    /* width: 30vw; */
+    /* height: 70vh;  */
+    background-color: rgb(243, 156, 170);
+    /* border: 2px solid purple; */
+    margin: 10px;
+   text-align: center;
+   border-radius: 14px;
+}
+
+.cards a[name='button']
+{
+    text-decoration: none;
+    padding: 7px 10px;
+    border: 2px solid black;
+    width: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    transition-property: all;
+    transition-duration: 2s;
+    margin-bottom: 20px;
+}
+.cards a[name='cart']
+{
+    text-decoration: none;
+    width: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
+.cards a[name='button']:hover
+{
+   color: red;
+
+}
+
+.center
+{
+    text-align: center;
+}
+footer{
+    background-color: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+ @media (min-width:280px) and (max-width: 530px)
+{
+    .containers{
+
+        /* border: 2px solid blue; */
+        /* background-color: rgb(122, 122, 245); */
+        background-color: rgb(255, 255, 255);
+
+        grid-template-columns: 1fr;
+    }
+   
+}
+
+
+@media (min-width: 540px) and (max-width: 770px)
+{
+    .containers{
+
+        /* border: 2px solid blue; */
+       
+        grid-template-columns: 1fr 1fr;
+    }
+
+ 
+}
+
+@media (min-width: 770px) and (max-width: 1030px)
+{
+    .containers{
+      
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+   
+} 
